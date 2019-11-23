@@ -5,13 +5,12 @@ db = client['assetmanagement']
 collection = db['workstations']
 
 class Insert:
-	def workstations(self, computer_name, purchase_date):
-		dictionary = {"computer_name": computer_name, "purchase_date": purchase_date}
-		if computer_name is None or purchase_date is None:
+	def workstations(self, input_submit):
+		if input_submit is None:
 			print("Something went wrong")
 		else:
-			x = collection.insert_one(dictionary)
-			print(dictionary)
+			x = collection.insert_one(input_submit)
+			print(input_submit)
 
 for x in collection.find():
 	print(x)
